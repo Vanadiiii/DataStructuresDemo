@@ -46,7 +46,7 @@ public class OrdArray extends AbstractArray {
             int index = (leftBound + rightBound) / 2;
             if (data[index] == key) {
                 return index;
-            } else if (leftBound >= rightBound) {
+            } else if (leftBound > rightBound) {
                 return -1;
             } else {
                 if (data[index] > key) {
