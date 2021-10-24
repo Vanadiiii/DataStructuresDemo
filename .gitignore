@@ -1,0 +1,6 @@
+/.idea
+/target
+*.iml
+
+#cause it's class only for my local checking
+**/Application.*
