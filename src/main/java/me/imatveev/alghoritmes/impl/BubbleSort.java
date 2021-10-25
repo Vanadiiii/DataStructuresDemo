@@ -5,21 +5,20 @@ import me.imatveev.alghoritmes.SortAlgorithm;
 public class BubbleSort<T extends Comparable<T>> implements SortAlgorithm<T> {
     @Override
     public T[] sort(T[] array) {
-        boolean flag = true;
-        while (flag) {
-            flag = false;
-
-            for (int i = 1; i < array.length; i++) {
-                if (array[i - 1].compareTo(array[i]) > 0) {
-                    flag = true;
-
-                    T swap = array[i];
-                    array[i] = array[i - 1];
-                    array[i - 1] = swap;
+        for (int out = array.length - 1; out > 1; out--) {
+            for (int in = 0; in < out; in++) {
+                if (array[in].compareTo(array[in + 1]) > 0) {
+                    swap(array, in, in + 1);
                 }
             }
         }
 
         return array;
+    }
+
+    private void swap(T[] array, int idx1, int idx2) {
+        T swap = array[idx1];
+        array[idx1] = array[idx2];
+        array[idx2] = swap;
     }
 }
